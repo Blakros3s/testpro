@@ -19,7 +19,6 @@ services:
       context: ./backend
     command: gunicorn --bind 0.0.0.0:8000 config.wsgi:application
     volumes:
-      - ./backend:/app
       - static_volume:/app/staticfiles
     environment:
       - SECRET_KEY=${SECRET_KEY}
